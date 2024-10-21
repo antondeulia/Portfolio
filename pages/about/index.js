@@ -4,16 +4,35 @@ import {
   FaCss3,
   FaJs,
   FaReact,
-  FaWordpress,
-  FaFigma,
+  FaNodeJs,
+  FaGithubSquare,
+  FaJenkins,
+  FaDocker,
+  FaAws,
 } from "react-icons/fa";
 
 import {
-  SiNextdotjs,
-  SiFramer,
-  SiAdobexd,
-  SiAdobephotoshop,
+  SiExpress,
+  SiGithubactions,
+  SiJira,
+  SiKubernetes,
+  SiMongodb,
+  SiNestjs,
+  SiRabbitmq,
+  SiTestinglibrary,
+  SiTypescript,
+  SiPrisma,
 } from "react-icons/si";
+
+import { SiNextdotjs, SiFramer } from "react-icons/si";
+
+import { BiLogoPostgresql } from "react-icons/bi";
+
+import { DiRedis } from "react-icons/di";
+
+import { GrGraphQl } from "react-icons/gr";
+
+import { TbApi } from "react-icons/tb";
 
 //  data
 const aboutData = [
@@ -21,33 +40,47 @@ const aboutData = [
     title: "skills",
     info: [
       {
-        title: "Web Development",
+        title: "Frontend Development",
         icons: [
           <FaHtml5 />,
           <FaCss3 />,
           <FaJs />,
+          <SiTypescript />,
           <FaReact />,
           <SiNextdotjs />,
           <SiFramer />,
-          <FaWordpress />,
         ],
       },
       {
-        title: "UI/UX Design",
-        icons: [<FaFigma />, <SiAdobexd />, <SiAdobephotoshop />],
+        title: "Backend Development",
+        icons: [
+          <FaNodeJs />,
+          <SiNestjs />,
+          <BiLogoPostgresql />,
+          <SiMongodb />,
+          <DiRedis />,
+          <SiRabbitmq />,
+          <SiExpress />,
+          <GrGraphQl />,
+          <TbApi />,
+          <SiTestinglibrary />,
+          <FaGithubSquare />,
+          <SiPrisma />,
+        ],
       },
-    ],
-  },
-  {
-    title: "awards",
-    info: [
       {
-        title: "Webby Awards - Honoree",
-        stage: "2011 - 2012",
+        title: "DevOps",
+        icons: [
+          <FaJenkins />,
+          <SiGithubactions />,
+          <SiKubernetes />,
+          <FaDocker />,
+          <FaAws />,
+        ],
       },
       {
-        title: "Adobe Design Achievement Awards - Finalist",
-        stage: "2009 - 2010",
+        title: "Management",
+        icons: [<SiJira />],
       },
     ],
   },
@@ -55,33 +88,46 @@ const aboutData = [
     title: "experience",
     info: [
       {
-        title: "UX/UI Designer - XYZ Company",
-        stage: "2012 - 2023",
+        title: "Middle Full-Stack Developer - Kauz",
+        stage: "10.2023 - 08.2024",
       },
       {
-        title: "Web Developer - ABC Agency",
-        stage: "2010 - 2012",
+        title: "Junior Full-Stack Developer - IT Incubator",
+        stage: "02.2023 - 10.2023",
       },
       {
-        title: "Intern - DEF Corporation",
-        stage: "2008 - 2010",
+        title: "Trainee Node.js Developer - IT Incubator",
+        stage: "11.2022 - 02.2023",
       },
     ],
   },
   {
-    title: "credentials",
+    title: "education",
     info: [
       {
-        title: "Web Development - ABC University, LA, CA",
-        stage: "2011",
+        title: "Bootcamp - GoIt",
+        stage: "05.2022 - 10.2022",
       },
       {
-        title: "Computer Science Diploma - AV Technical Institute",
-        stage: "2009",
+        title: "Bachelor's Degree - ЧНУ",
+        stage: "09.2018 - 06.2022",
+      },
+    ],
+  },
+  {
+    title: "languages",
+    info: [
+      {
+        title: "English",
+        stage: "C1",
       },
       {
-        title: "Certified Graphic Designer - ABC Institute, Los Angeles, CA",
-        stage: "2006",
+        title: "Ukrainian",
+        stage: "Fluent",
+      },
+      {
+        title: "Russian",
+        stage: "Fluent",
       },
     ],
   },
@@ -114,7 +160,7 @@ const About = () => {
         <Avatar />
       </motion.div>
 
-      <div className="container mx-auto h-full flex flex-col items-center xl:flex-row gap-x-6">
+      <div className="lg:mt-5 container mx-auto h-full flex flex-col items-center xl:flex-row gap-x-6">
         <div className="flex-1 flex flex-col justify-center">
           <motion.h2
             variants={fadeIn("right", 0.2)}
@@ -133,9 +179,12 @@ const About = () => {
             exit="hidden"
             className="max-w-[500px] mx-auto xl:mx-0 mb-6 xl:mb-12 px-2 xl:px-0"
           >
-            10 years ago, I began freelancing as a developer. Since then, I've
-            done remote work for agencies, consulted for startups, and
-            collaborated on digital products for business and consumer use
+            About 3 years ago I started my journey as a js developer, taking
+            part in the development of about 5 commercial projects and making
+            several of my own, I reached the level of a middle full-stack
+            developer, confident in my abilities and capable of performing
+            complex tasks. I love sharing my experience with others, so I’ve
+            recently been running my own YouTube channel
           </motion.p>
 
           {/* counters */}
@@ -160,7 +209,7 @@ const About = () => {
               {/* projects */}
               <div className="flex  gap-3 relative flex-1 after:w-[1px] after:h-full">
                 <div className="min-w-[80px] text-2xl xl:text-4xl font-extrabold text-accent mb-2">
-                  <CountUp start={0} end={650} duration={5} /> +
+                  <CountUp start={0} end={15} duration={5} /> +
                 </div>
                 <div className="pt-[2px] text-xs uppercase tracking-[1px] leading-[1.4] max-w-[100px]">
                   Finished projects
@@ -199,14 +248,16 @@ const About = () => {
               return (
                 <div
                   key={i}
-                  className="flex-1 flex flex-col md:flex-row max-w-max gap-x-2 items-center text-white/60"
+                  className="flex md:flex-row max-w-max gap-x-2 mb-5 items-center text-white/60 "
                 >
-                  <div className="font-light mb-2 md:mb-0">{item.title}</div>
+                  <div className="font-light mb-2 md:mb-0 w-[200px]">
+                    {item.title}
+                  </div>
                   <div className="hidden md:flex">-</div>
                   <div>{item.stage}</div>
 
                   {/* icons */}
-                  <div className="flex gap-x-4">
+                  <div className="flex gap-x-4 flex-wrap gap-5">
                     {item.icons?.map((icon, i) => {
                       return (
                         <div className="text-2xl text-white" key={i}>

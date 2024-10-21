@@ -7,7 +7,7 @@ import { fadeIn } from "../../variants";
 
 const Work = () => {
   return (
-    <div className="h-full bg-primary/30 py-36 flex items-center">
+    <div className="lg:mt-8 h-full bg-primary/30 py-36 flex items-center">
       <Circles />
       <div className="container mx-auto">
         <div className="flex flex-col xl:flex-row gap-x-8">
@@ -20,7 +20,7 @@ const Work = () => {
               exit="hidden"
               className="h2 xl:mt-8"
             >
-              My work <span className="text-accent">.</span>
+              My projects <span className="text-accent">.</span>
             </motion.h2>
             <motion.p
               variants={fadeIn("up", 0.4)}
@@ -29,7 +29,8 @@ const Work = () => {
               exit="hidden"
               className="mb-4 max-w-[400px] mx-auto lg:mx-0"
             >
-              Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem{" "}
+              List of my projects, mainly pet and freelance, unfortunately I do
+              not have the right to post private commercial projects here
             </motion.p>
           </div>
 
