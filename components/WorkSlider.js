@@ -5,19 +5,26 @@ const workSlides = {
       images: [
         {
           title: "title",
-          path: "/thumb1.jpg",
+          path: "/projects/iphone-landing-preview.jpg",
+          code: "https://github.com/antondeulia/apple-landing",
+          live: "https://apple-landing-lake.vercel.app/",
         },
         {
           title: "title",
-          path: "/thumb2.jpg",
+          path: "/projects/antmeet-preview.jpg",
+          code: "https://github.com/antondeulia/antmeet",
+          live: "https://antmeet.vercel.app/",
         },
         {
           title: "title",
-          path: "/thumb3.jpg",
+          path: "/projects/portfolio-preview.jpg",
+          code: "https://github.com/antondeulia/Portfolio",
         },
         {
           title: "title",
-          path: "/thumb4.jpg",
+          path: "/projects/anime-list-preview.jpg",
+          code: "https://github.com/antondeulia/anime-list",
+          live: "https://anime-list-olive.vercel.app/",
         },
       ],
     },
@@ -25,19 +32,21 @@ const workSlides = {
       images: [
         {
           title: "title",
-          path: "/thumb4.jpg",
+          path: "/projects/travel-app-preview.jpg",
+          code: "https://github.com/antondeulia/TravelApp",
+          live: "https://travel-app-hazel-delta.vercel.app/",
         },
         {
           title: "title",
-          path: "/thumb1.jpg",
+          path: "/projects/url-shortener-preview.jpg",
+          code: "https://github.com/antondeulia/url-shortener-front",
+          live: "https://url-shortener-front-ten.vercel.app/",
         },
         {
           title: "title",
-          path: "/thumb2.jpg",
-        },
-        {
-          title: "title",
-          path: "/thumb3.jpg",
+          path: "/projects/memorize-preview.jpg",
+          code: "https://github.com/antondeulia/Memorize",
+          live: "https://memorize-five.vercel.app",
         },
       ],
     },
@@ -53,6 +62,7 @@ import "swiper/css";
 import "swiper/css/free-mode";
 import "swiper/css/pagination";
 import Image from "next/image";
+import Link from "next/link";
 
 const WorkSlider = () => {
   return (
@@ -78,26 +88,31 @@ const WorkSlider = () => {
                         alt={image.title}
                         width={500}
                         height={300}
+                        className="object-fit"
                       />
-
-                      {/* gradient */}
                       <div className="absolute inset-0 bg-gradient-to-l from-transparent via-[#e838cc] to-[#4a22bd] opacity-0 group-hover:opacity-80 transition-all duration-700"></div>
 
-                      {/* title */}
                       <div className="absolute bottom-0 translate-y-full group-hover:-translate-y-10 group-hover:xl:-translate-y-20 transition-all duration-300">
-                        <div className="flex items-center gap-x-2 text-[13px] tracking-[0.2rem]">
-                          {/* title part 1 */}
-                          <div className="delay-100">LIVE</div>
+                        <div className="flex items-center gap-x-[50px] text-[13px] tracking-[0.2rem]">
+                          {image.live && (
+                            <Link
+                              href={image.live}
+                              target="_blank"
+                              className="flex gap-2"
+                            >
+                              <div className="delay-100">LIVE</div>
+                              <div className="text-xl translate-y-[500%] group-hover:translate-y-0 transition-all duration-300 ">
+                                <BsArrowRight />
+                              </div>
+                            </Link>
+                          )}
 
-                          {/* title part 2 */}
-                          <div className="translate-y-[500%] group-hover:translate-y-0 transition-all duration-300 delay-150">
-                            PROJECT
-                          </div>
-
-                          {/* icon */}
-                          <div className="text-xl translate-y-[500%] group-hover:translate-y-0 transition-all duration-300 delay-200">
-                            <BsArrowRight />
-                          </div>
+                          <Link
+                            href={image.code}
+                            className="translate-y-[500%] group-hover:translate-y-0 transition-all duration-300 delay-150"
+                          >
+                            CODE
+                          </Link>
                         </div>
                       </div>
                     </div>
